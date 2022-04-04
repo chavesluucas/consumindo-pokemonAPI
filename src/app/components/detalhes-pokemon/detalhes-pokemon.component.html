@@ -1,0 +1,81 @@
+<section id="image" class="container">
+  <div class="row">
+    <div class="card col-lg-3">
+      <img src="{{pokemonObj.sprites?.front_default}}" class="card-img-top" alt="{{pokemonObj.name}}">
+      <div class="card-body">
+        <p class="card-text"><b>{{pokemonObj.name | uppercase}} Padrão - Frente</b></p>
+      </div>
+    </div>
+    <div class="card col-lg-3">
+      <img src="{{pokemonObj.sprites?.back_default}}" class="card-img-top" alt="{{pokemonObj.name}}">
+      <div class="card-body">
+        <p class="card-text"> <b>{{pokemonObj.name | uppercase}} Padrão - Ao contrário</b></p>
+      </div>
+    </div>
+    <div class="card col-lg-3">
+      <img src="{{pokemonObj.sprites?.front_shiny}}" class="card-img-top" alt="{{pokemonObj.name}}">
+      <div class="card-body">
+        <p class="card-text"> <b>{{pokemonObj.name | uppercase}} Shiny - Frente</b></p>
+      </div>
+    </div>
+    <div class="card col-lg-3">
+      <img src="{{pokemonObj.sprites?.front_shiny}}" class="card-img-top" alt="{{pokemonObj.name}}">
+      <div class="card-body">
+        <p class="card-text"><b>{{pokemonObj.name | uppercase}} Shiny - Ao contrário</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+<hr>
+<br>
+
+
+<section id="dados-basicos" class="container">
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">{{pokemonObj.name}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Altura</th>
+        <td>{{pokemonObj.height}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Experiência Base</th>
+        <td>{{pokemonObj.base_experience}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Ordem</th>
+        <td>{{pokemonObj.order}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Peso</th>
+        <td>{{pokemonObj.weight}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<br>
+<hr>
+<br>
+
+
+<section class="container" id="abillities">
+  <div class="d-flex justify-content-center">
+      <legend class="text-center">Habilidades</legend>
+  </div>
+  <div class="row">
+  <div id="cardPokemon" *ngFor="let ability of pokemonObj.abilities" class="card" class="col-lg-3">
+    <div class="card-body">
+      <h5 class="card-title">{{ability.slot}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ability.ability?.name}}</h6>
+      <p class="card-text">{{ability.ability?.url}}</p>
+    </div>
+  </div>
+</div>
+</section>
